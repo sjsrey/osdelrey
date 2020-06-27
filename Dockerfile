@@ -44,7 +44,7 @@ RUN conda update conda --yes \
      'polyline' \
      'pyarrow' \
      'pymc3' \
-     'pysal' \
+     'pysal=2.2.0' \
      'pystan' \
      'qgrid' \
      'rasterio' \
@@ -87,7 +87,10 @@ RUN npm cache clean --force \
 USER root
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends software-properties-common htop
+    && apt-get install -y --no-install-recommends software-properties-common htop \
+    texlive-full \
+    python-pygments gnuplot \
+    && rm -rf /var/lib/apt/lists/*
 
 #--- Texbuild ---#
 

@@ -8,3 +8,6 @@ lab:
 labosx:
 	docker run --rm -p 4000:4000 -p 8888:8888 -v ${PWD}:/home/jovyan/work:delegated osdelrey
 
+sh:
+	docker run --rm -p 4000:4000 -p 8888:8888 -v ${PWD}:/home/jovyan/work:delegated osdelrey bash
+
